@@ -77,6 +77,11 @@
     opacity: 1;
     transform: translateY(0px);
 }
+@media screen and (max-width: 1300px) {
+    .footer-left{
+        font-size: 22px;
+    }
+}
 @media screen and (max-width: 760px) {
     .footer{
         flex-direction: column;
