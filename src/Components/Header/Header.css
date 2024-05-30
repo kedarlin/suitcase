@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px 140px 24px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.566);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    z-index: 10;
+}
+.header-logo-container {
+    overflow: hidden;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.header-logo{
+    position: relative;
+    color: white;
+    font-size: 34px;
+    font-weight: 200;
+    transform: translateY(0);
+    transition: transform 0.5s, opacity 0.5s;
+}
+.header-logo-h{
+    position: absolute;
+    color: #777777;
+    font-size: 34px;
+    font-weight: 200;
+    transform: translateY(24px);
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+.header-logo-container:hover .header-logo{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.header-logo-container:hover .header-logo-h{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+}
+
+.header-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+}
+
+.header-item-container {
+    overflow: hidden;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.header-item{
+    position: relative;
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.5s, opacity 0.5s;
+}
+.header-item-h{
+    position: absolute;
+    color: #777777;
+    transform: translateY(24px);
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+.header-item-container:hover .header-item{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.header-item-container:hover .header-item-h{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.header-button {
+    margin-left: 25px;
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    height: fit-content;
+    font-size: 15px;
+    border: 1px solid rgb(67, 67, 67);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width: 1300px) and (min-width: 900px) {
+    .header {
+        padding: 25px 80px 24px;
+    }
+
+}
+@media screen and (max-width: 900px) and (min-width: 760px) {
+    .header {
+        padding: 25px 40px 24px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .header {
+        padding: 25px 20px 24px;
+    }
+    .header-navbar{
+        display: none;
+    }
+}
