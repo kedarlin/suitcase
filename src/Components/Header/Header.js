@@ -55,6 +55,9 @@ const Header = ({ toggleTheme, isDarkMode }) => {
             <div className='header-item-h'>Contact</div>
           </div>
           <button className='header-button'>Remix</button>
+          <button className='header-button' onClick={toggleTheme} type='toggle'>
+            {isDarkMode ? <FaMoon /> : <FaSun />}
+          </button>
         </div>
       )}
     </div>
