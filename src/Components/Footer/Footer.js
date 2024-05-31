@@ -11,7 +11,7 @@ const Footer = () => {
             </div>
             <div className='footer-right'>
                 <div className='footer-right-head'>EXPLORE</div>
-                <div className='footer-right-links'>
+                <div className='footer-right-links darkmode'>
                     <div className='footer-right-1'>
                         <div className='footer-item-container'>
                             <p className='footer-item'>Work</p>

@@ -5,6 +5,11 @@ body {
     font-family: "DM Sans", sans-serif;
     scroll-behavior: smooth;
 }
+
+body.dark-mode {
+    background-color: white;
+    color: black;
+}
 @media screen and (max-width: 1300px) and (min-width: 900px) {
     body {
         padding: 0px 80px 24px;

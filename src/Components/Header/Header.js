@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
 
-const Header = () => {
+const Header = ({ toggleTheme, isDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,10 +30,13 @@ const Header = () => {
             </div>
           </div>
           <button className='header-button'>Remix</button>
+          <button className='header-button' onClick={toggleTheme} type='toggle'>
+            {isDarkMode ? <FaMoon /> : <FaSun />}
+          </button>
         </div>
         <div className='header-navbar-m'>
-          <div onClick={toggleMenu} style={{ cursor: "pointer" }}>
-            {isOpen ? <FaTimes fontSize="25px" /> : <FaBars fontSize="25px" />}
+          <div onClick={toggleMenu} style={{ cursor: "pointer", alignItems: "center" }}>
+            {isOpen ? <FaTimes fontSize="25px" className='darkmode'/> : <FaBars fontSize="25px" className='darkmode'/>}
           </div>
         </div>
       </div>

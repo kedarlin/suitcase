@@ -58,7 +58,6 @@
 }
 .footer-item{
     position: relative;
-    color: white;
     transform: translateY(0);
     transition: transform 0.5s, opacity 0.5s;
 }
