@@ -1,6 +1,35 @@
-import React from 'react'
-import './Body.css'
+import React, { useEffect } from 'react';
+import './Body.css';
+
 const Body = () => {
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 20% 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    const elementsToAnimate = document.querySelectorAll('.scrolleffect, .scrolleffectn');
+    elementsToAnimate.forEach(element => {
+      observer.observe(element);
+    });
+
+    return () => {
+      elementsToAnimate.forEach(element => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
     <div className='body'>
       <div className='body-1'>
@@ -51,12 +80,12 @@ const Body = () => {
       </div>
 
       <div className='body-6'>
-        <h4 className='body-6-desc scrolleffct'>
+        <h4 className='body-6-desc scrolleffect'>
           The end result is a user-friendly electric bicycle that makes it easy for riders to enjoy the benefits of e-bikes without feeling overwhelmed by technology. With VoltBike, riding smarter has never been easier!
         </h4>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
