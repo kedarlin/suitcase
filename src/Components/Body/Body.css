@@ -73,6 +73,7 @@
     height: auto;
 }
 .body-4-img {
+    padding: 20px;
     height: auto;
     overflow: visible;
 }
@@ -87,6 +88,7 @@
     height: auto;
 }
 .body-5-img {
+    padding: 20px;
     height: auto;
     overflow: visible;
 }
@@ -128,7 +130,7 @@
         overflow: hidden;
     }
     .body-4-img, .body-5-img {
-        width: 90%;
+        width: 30%;
         height: 100%;
         object-fit: cover;
         object-position: center;
@@ -144,8 +146,9 @@
         width: 100%;
     }
     .body-4-img, .body-5-img {
-        width: 90%;
-        height: 100%;
+        align-self: center;
+        width: 70%;
+        height: 90%;
         object-fit: contain;
         object-position: center;
     }
