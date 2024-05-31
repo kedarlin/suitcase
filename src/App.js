@@ -1,35 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Header from './Components/Header/Header';
-import Body from './Components/Body/Body';
-import Footer from './Components/Footer/Footer';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Work from './Pages/Work/Work';
 
 function App() {
-
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(prefersDarkMode);
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode(prevMode => !prevMode);
-  };
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [isDarkMode]);
-
   return (
-    <div className="App">
-      <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
-      <Body />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/work' element={<Work />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -10,6 +10,9 @@
     opacity: 0;
     z-index: 10;
 }
+.header.visible {
+    opacity: 1;
+  }
 .header-n {
     display: flex;
     flex-direction: row;

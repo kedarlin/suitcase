@@ -38,23 +38,23 @@ const Body = () => {
         <h4 className='body-1-desc scrolleffect'>
           Ziggo, the smart suitcase app that lets you control your luggage like a smart home! With Ziggo, you can easily lock and unlock your suitcase, check the battery level, and even receive notifications if your suitcase strays too far from you.
         </h4>
-        <div className='body-1-items'>
-          <div className='body-1-item scrolleffect'>
+        <div className='body-1-items scrolleffect'>
+          <div className='body-1-item'>
             <p className='body-1-item-title'>Client</p>
             <p className='body-1-item-desc'>Client Example</p>
           </div>
-          <div className='body-1-item scrolleffect'>
+          <div className='body-1-item'>
             <p className='body-1-item-title'>Services</p>
             <div className='body-1-item-services'>
               <p className='body-1-item-desc'>Visual Design</p>
               <p className='body-1-item-desc'>UI & UX Design</p>
             </div>
           </div>
-          <div className='body-1-item scrolleffect'>
+          <div className='body-1-item'>
             <p className='body-1-item-title'>Industries</p>
             <p className='body-1-item-desc'>Travel</p>
           </div>
-          <div className='body-1-item scrolleffect'>
+          <div className='body-1-item'>
             <p className='body-1-item-title'>Date</p>
             <p className='body-1-item-desc'>January 2023</p>
           </div>
