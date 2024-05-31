@@ -82,9 +82,6 @@
     transform: translateY(0);
     transition: transform 0.5s, opacity 0.5s;
 }
-.darkmode {
-    color: white;
-}
 .header-item-h{
     position: absolute;
     color: #777777;
