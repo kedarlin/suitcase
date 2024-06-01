@@ -28,12 +28,39 @@ const Work = () => {
             document.body.classList.remove('dark-mode');
         }
     }, [isDarkMode]);
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '0px 0px 20% 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        const elementsToAnimate = document.querySelectorAll('.scrolleffect, .scrolleffectn');
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
+        });
+
+        return () => {
+            elementsToAnimate.forEach(element => {
+                observer.unobserve(element);
+            });
+        };
+    }, []);
 
     return (
         <div className='work'>
             <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
             <div className='work-content'>
-                <div className='work-head'>
+                <div className='work-head scrolleffect'>
                     <h1 className='work-title'>
                         Explore Designs<br />that are
                         <span className='work-title-span'> Functional</span>
