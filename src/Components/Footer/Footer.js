@@ -1,6 +1,9 @@
 import React from 'react'
 import './Footer.css'
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+
+    const navigate = useNavigate();
     return (
         <div className="footer">
             <div className='footer-left'>
@@ -13,7 +16,7 @@ const Footer = () => {
                 <div className='footer-right-head'>EXPLORE</div>
                 <div className='footer-right-links darkmode'>
                     <div className='footer-right-1'>
-                        <div className='footer-item-container'>
+                        <div className='footer-item-container' onClick={() => navigate('/work')}>
                             <p className='footer-item'>Work</p>
                             <p className='footer-item-h'>Work</p>
                         </div>

@@ -58,12 +58,6 @@ const Work = () => {
                                 <img src='/Assets/slide-img-5.jpg' alt='slide-img' />
                             </div>
                             <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' />
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-6.jpg' alt='slide-img' />
-                            </div>
-                            <div className='slide'>
                                 <img src='/Assets/slide-img-6.jpg' alt='slide-img' />
                             </div>
                         </div>
@@ -84,12 +78,6 @@ const Work = () => {
                             </div>
                             <div className='slide'>
                                 <img src='/Assets/slide-img-5.jpg' alt='slide-img' />
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' />
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-6.jpg' alt='slide-img' />
                             </div>
                             <div className='slide'>
                                 <img src='/Assets/slide-img-6.jpg' alt='slide-img' />
