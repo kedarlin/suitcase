@@ -21,6 +21,7 @@
     align-self: center;
     width: 96vw;
     margin-top: 100px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -36,7 +37,7 @@
 }
 .slide {
     flex: none;
-    width: 200px;
+    width: 250px;
     height: 300px;
     overflow: hidden;
     border-radius: 20px;
@@ -51,5 +52,5 @@
     transition: transform 0.3s ease;
 }
 .slide:hover img {
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
