@@ -1,0 +1,180 @@
+$animationSpeed: 20s;
+$text-color: var(--text-color);
+$reverseAnimationSpeed: 20s;
+
+@keyframes reverseScroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 1100%;
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 30px;
+    position: absolute;
+    &:nth-child(2) {
+        animation: reverseScroll $reverseAnimationSpeed linear infinite;
+      }
+  }
+
+  .slide {
+    height: 300px;
+  }
+
+  &:hover {
+    .slide-track {
+      animation-play-state: paused;
+    }
+  }
+
+  .slide {
+    transition: 300ms all linear;
+
+    &:hover {
+      filter: none;
+    }
+  }
+}
+
+.work {
+  &-content {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-head {
+    h1 {
+      font-size: 54px;
+      font-weight: 200;
+
+      .work-title-span {
+        color: #fff;
+      }
+    }
+  }
+
+  &-sliders {
+    align-self: center;
+    width: 96vw;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 30px;
+    -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
+  }
+
+  &-slides {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .slide {
+    flex: none;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+    cursor: pointer;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide-hover {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+
+      .hov-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        opacity: 0.5;
+        transition: opacity 0.5s ease;
+      }
+
+      .slide-cont {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        color: #fff;
+        text-align: left;
+        overflow: hidden;
+
+        .slide-title {
+          font-size: 24px;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .slide-desc {
+          font-size: 16px;
+          font-weight: 400;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 100%;
+        }
+      }
+    }
+
+    &:hover {
+      width: 400px;
+
+      img {
+        scale: 1.5;
+      }
+
+      > .ori-img {
+        opacity: 0;
+      }
+
+      > .slide-hover {
+        display: block;
+      }
+    }
+  }
+}
+
+.slider.reverse .slide-track {
+    animation: reverseScroll $reverseAnimationSpeed linear infinite;
+  }
