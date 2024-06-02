@@ -25,7 +25,7 @@ $reverseAnimationSpeed: 20s;
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 1100%;
+  width: 100%;
 
   .slide-track {
     animation: scroll $animationSpeed linear infinite;
@@ -34,28 +34,27 @@ $reverseAnimationSpeed: 20s;
     justify-content: space-around;
     gap: 30px;
     position: absolute;
-    &:nth-child(2) {
-        animation: reverseScroll $reverseAnimationSpeed linear infinite;
-      }
   }
 
   .slide {
     height: 300px;
   }
 
-  &:hover {
-    .slide-track {
-      animation-play-state: paused;
-    }
+  &:hover .slide-track,
+  .slide:hover ~ .slide-track {
+    animation-play-state: paused;
   }
 
   .slide {
-    transition: 300ms all linear;
-
-    &:hover {
-      filter: none;
-    }
+    transition: 3s all linear;
   }
+}
+
+.slider.reverse .slide-track {
+  animation: reverseScroll $reverseAnimationSpeed linear infinite;
+}
+.reverse:hover .slide-track{
+  animation-play-state: paused;
 }
 
 .work {
@@ -84,14 +83,13 @@ $reverseAnimationSpeed: 20s;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: 30px;
+    gap: 40px;
     -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
   }
 
   &-slides {
     display: flex;
     flex-direction: row;
-    gap: 15px;
   }
 
   .slide {
@@ -175,6 +173,56 @@ $reverseAnimationSpeed: 20s;
   }
 }
 
-.slider.reverse .slide-track {
-    animation: reverseScroll $reverseAnimationSpeed linear infinite;
+@media (max-width: 420px) {
+  .slider {
+    height: 200px;
+
+    .slide-track {
+      gap: 15px;
+    }
+
+    .slide {
+      width: 150px;
+      height: 200px;
+
+      &:hover {
+        width: 300px;
+
+        img {
+          scale: 1.5;
+        }
+
+        > .ori-img {
+          opacity: 0;
+        }
+
+        > .slide-hover {
+          display: block;
+        }
+      }
+    }
   }
+
+  .work {
+    &-head {
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    &-sliders {
+      width: 90vw;
+      gap: 20px;
+    }
+
+    .slide-cont {
+      .slide-title {
+        font-size: 16px;
+      }
+
+      .slide-desc {
+        font-size: 12px;
+      }
+    }
+  }
+}
