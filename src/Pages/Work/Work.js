@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import './Work.css';
+import { FaBatteryHalf, FaRegSun, FaSearch, FaSignal, FaSun, FaWifi } from 'react-icons/fa';
 
 const Work = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -9,6 +10,31 @@ const Work = () => {
     const toggleTheme = () => {
         setIsDarkMode(prevMode => !prevMode);
     };
+    const [showLaterAnimation, setShowLaterAnimation] = useState(false);
+
+    const handleClick = () => {
+        setShowLaterAnimation(true);
+    };
+
+    const [time, setTime] = useState('');
+
+    useEffect(() => {
+        const updateTime = () => {
+            const options = {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+            };
+            const indiaTime = new Date().toLocaleTimeString('en-US', options);
+            setTime(indiaTime);
+        };
+
+        updateTime();
+        const intervalId = setInterval(updateTime, 60000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     useEffect(() => {
         if (isDarkMode) {
@@ -273,6 +299,73 @@ const Work = () => {
                             </div>
                         </div>
                     </div> */}
+                </div>
+                <div className="work-animations">
+                    <div className="anime-1">
+                        <div className={`initial-animation ${showLaterAnimation ? 'hide' : ''}`}>
+                            <div className="animation-head scrolleffect">
+                                <h3 className="animation-title">Transforms your ideas into designs</h3>
+                                <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
+                            </div>
+                            <div className="animation-input">
+                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" />
+                                <button className="input-button" onClick={handleClick}>Generate</button>
+                            </div>
+                        </div>
+                        <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`}>
+                            <div className="animation-1">
+                                <div className='noti-bar'>
+                                    <div className='noti-time'>{time}</div>
+                                    <span className='noti-notch'></span>
+                                    <div className='noti-icons'>
+                                        <FaSignal />
+                                        <FaWifi />
+                                        <FaBatteryHalf />
+                                    </div>
+                                </div>
+                                <div className='phone-input'>
+                                    <FaSearch />
+                                    <span>The Cosmos</span>
+                                </div>
+                                <div className='phone-tab'>
+                                    <div class="tab-item is-active">Comets</div>
+                                    <div class="tab-item">Stars</div>
+                                    <div class="tab-item">Planets</div>
+                                    <div class="tab-item">Galaxies</div>
+                                </div>
+                                <div className='tab-img'>
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="animation-2">
+                                <div className="tab-img">
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />
