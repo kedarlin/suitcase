@@ -79,8 +79,8 @@ const Body = () => {
         <img src='/Assets/img-3.png' alt='img-5' className='body-5-img' />
       </div>
 
-      <div className='body-6'>
-        <h4 className='body-6-desc scrolleffect'>
+      <div className='body-6 scrolleffect'>
+        <h4 className='body-6-desc'>
           The end result is a user-friendly electric bicycle that makes it easy for riders to enjoy the benefits of e-bikes without feeling overwhelmed by technology. With VoltBike, riding smarter has never been easier!
         </h4>
       </div>

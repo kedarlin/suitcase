@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import './Work.scss'; // Import the SCSS file
+import './Work.css';
 
 const Work = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,6 +55,14 @@ const Work = () => {
                         Explore Designs<br />that are
                         <span className='work-title-span'> Functional</span>
                     </h1>
+                </div>
+                <div className='work-boxes'>
+                    <div className='work-box scrolleffect'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffect'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
                 </div>
                 <div className='work-sliders'>
                     <div className='slider'>
@@ -161,7 +169,7 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='slider reverse'>
+                    {/* <div className='slider reverse'>
                         <div className='slide-track'>
                             <div className='slide'>
                                 <img src='/Assets/slide-img-1.jpg' alt='slide-img' className='ori-img' />
@@ -264,7 +272,7 @@ const Work = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <Footer />

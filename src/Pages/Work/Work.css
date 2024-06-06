@@ -1,0 +1,227 @@
+:root {
+  --animation-speed: 20s;
+  --text-color: var(--text-color);
+  --reverse-animation-speed: 20s;
+}
+
+@keyframes reverseScroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider .slide-track {
+  animation: scroll var(--animation-speed) linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  gap: 30px;
+  position: absolute;
+}
+.slider .slide {
+  height: 300px;
+}
+.slider:hover .slide-track,
+.slider .slide:hover ~ .slide-track {
+  animation-play-state: paused;
+}
+.slider .slide {
+  transition: 3s all linear;
+}
+.slider.reverse .slide-track {
+  animation: reverseScroll var(--reverse-animation-speed) linear infinite;
+}
+.reverse:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.work-content {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-head h1 {
+  font-size: 54px;
+  font-weight: 200;
+}
+.work-head h1 .work-title-span {
+  color: #b2fd6a;
+}
+.work-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 20px 0;
+}
+.work-box {
+  height: 400px;
+  background-color: #cfcff5;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-box img {
+  width: 90%;
+  height: auto;
+  transition: transform 0.4s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.work-box:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 760px) {
+  .work-boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-sliders {
+  align-self: center;
+  width: 96vw;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 40px;
+  -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
+}
+
+.work-slides {
+  display: flex;
+  flex-direction: row;
+}
+
+.work .slide {
+  flex: none;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+.work .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: opacity 0.5s ease;
+}
+.work .slide .slide-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+.work .slide .slide-hover .hov-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+.work .slide .slide-hover .slide-cont {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  color: #fff;
+  text-align: left;
+  overflow: hidden;
+}
+.work .slide .slide-hover .slide-cont .slide-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+.work .slide .slide-hover .slide-cont .slide-desc {
+  font-size: 16px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.work .slide:hover {
+  width: 400px;
+}
+.work .slide:hover img {
+  scale: 1.5;
+}
+.work .slide:hover > .ori-img {
+  opacity: 0;
+}
+.work .slide:hover > .slide-hover {
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .slider {
+    height: 200px;
+  }
+  .slider .slide-track {
+    gap: 15px;
+  }
+  .slider .slide {
+    width: 150px;
+    height: 200px;
+  }
+  .slider .slide:hover {
+    width: 300px;
+  }
+  .slider .slide:hover img {
+    scale: 1.5;
+  }
+  .slider .slide:hover > .ori-img {
+    opacity: 0;
+  }
+  .slider .slide:hover > .slide-hover {
+    display: block;
+  }
+  .work-head h1 {
+    font-size: 32px;
+  }
+  .work-sliders {
+    width: 90vw;
+    gap: 20px;
+    -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
+  }
+  .slide-cont .slide-title {
+    font-size: 16px;
+  }
+  .slide-cont .slide-desc {
+    font-size: 12px;
+  }
+}

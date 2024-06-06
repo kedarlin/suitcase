@@ -6,13 +6,13 @@ const Footer = () => {
     const navigate = useNavigate();
     return (
         <div className="footer">
-            <div className='footer-left'>
+            <div className='footer-left scrolleffect'>
                 <div className='footer-left-desc'>
                     We specialize in crafting exceptional digital experiences to help our clients achieve their business goals.
                 </div>
                 <button className='footer-button'>Get for Free</button>
             </div>
-            <div className='footer-right'>
+            <div className='footer-right scrolleffect'>
                 <div className='footer-right-head'>EXPLORE</div>
                 <div className='footer-right-links darkmode'>
                     <div className='footer-right-1'>
