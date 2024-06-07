@@ -268,7 +268,7 @@
 
 .anime-1 {
   flex: 0.5;
-  height: 300px;
+  height: 400px;
   background-color: #1d1c20;
   border: #8f8f8f82 solid 1px;
   border-radius: 25px;
@@ -337,16 +337,16 @@
   flex: 1;
   opacity: 0;
   transition: all 0.5s ease;
-  height: 300px;
-  border-radius: 25px;
   padding: 15px;
   background-color: #1b1b1e;
   border: solid 1px #8f8f8f82;
 }
 
 .animation-1 {
-  margin: 50px 0 0 30px;
+  margin: 70px 0 0 30px;
   display: flex;
+  height: 300px;
+  border-radius: 25px 25px 0 0;
   flex-direction: column;
   width: 100%;
 }
@@ -356,7 +356,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 250px;
+  height: 300px;
   border-radius: 0 0 25px 25px;
 }
 
@@ -472,7 +472,7 @@
 }
 .anime-2 {
   flex: 0.3;
-  height: 300px;
+  height: 400px;
   background-color: #1d1c20;
   border: #8f8f8f82 solid 1px;
   border-radius: 25px;
@@ -482,7 +482,8 @@
   margin: 30px 30px 0 30px;
 }
 .design-2 {
-  height: 200px;
+  height: 300px;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,11 +496,10 @@
   color: #7256ff;
 }
 .design-2:hover > .img-design {
-  transform: translateX(300%) rotate(240deg);
+  transform: translateX(300%) rotate(240deg) scale(0);
 }
 .phone {
   margin-top: 40px;
-  display: none;
   height: 100%;
   position: absolute;
   width: 80%;
@@ -507,18 +507,13 @@
   border: solid 1px #878788;
   border-radius: 25px 25px 0 0;
   padding: 20px 10px;
+  transition: 1s;
+  transform: rotate(-50deg) translateX(-200%);
+  overflow: hidden;
 }
 .design-2:hover > .phone {
   display: block;
-  animation: phone-trans 1s;
-}
-@keyframes phone-trans {
-  0% {
-    transform: rotate(-45deg) translateX(-100%);
-  }
-  100% {
-    transform: rotate(0) translate(0);
-  }
+  transform: rotate(0deg) translateX(0);
 }
 @media (max-width: 1000px) {
   .anime-1{
