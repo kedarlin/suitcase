@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import './Work.css';
-import { FaBatteryHalf, FaRegSun, FaSearch, FaSignal, FaSun, FaWifi } from 'react-icons/fa';
+import { FaBatteryHalf, FaSearch, FaSignal, FaWifi } from 'react-icons/fa';
+import { LuSparkle } from 'react-icons/lu';
 
 const Work = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -13,7 +14,7 @@ const Work = () => {
     const [showLaterAnimation, setShowLaterAnimation] = useState(false);
 
     const handleClick = () => {
-        setShowLaterAnimation(true);
+        setShowLaterAnimation(!showLaterAnimation);
     };
 
     const [time, setTime] = useState('');
@@ -195,110 +196,6 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <div className='slider reverse'>
-                        <div className='slide-track'>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-1.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-2.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-3.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-4.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-1.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-2.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-3.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-4.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
                 <div className="work-animations">
                     <div className="anime-1">
@@ -312,7 +209,7 @@ const Work = () => {
                                 <button className="input-button" onClick={handleClick}>Generate</button>
                             </div>
                         </div>
-                        <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`}>
+                        <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`} onClick={handleClick}>
                             <div className="animation-1">
                                 <div className='noti-bar'>
                                     <div className='noti-time'>{time}</div>
@@ -334,15 +231,15 @@ const Work = () => {
                                     <div class="tab-item">Galaxies</div>
                                 </div>
                                 <div className='tab-img'>
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
                                         Genius
                                     </div>
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <img src='/Assets/slide-img-4.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
                                         Genius
                                     </div>
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
                                         Genius
                                     </div>
@@ -354,11 +251,57 @@ const Work = () => {
                                     <div className='img-desc'>
                                         Genius
                                     </div>
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
                                         Genius
                                     </div>
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
+                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='anime-2'>
+                        <div className="animation-head-2 scrolleffect">
+                            <h3 className="animation-title">Design with AI magic</h3>
+                            <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
+                        </div>
+                        <div className='design-2'>
+                            <div className='img-design'>
+                                <LuSparkle className='star'/>
+                            </div>
+                            <div className="phone">
+                                <div className='noti-bar'>
+                                    <div className='noti-time'>{time}</div>
+                                    <span className='noti-notch'></span>
+                                    <div className='noti-icons'>
+                                        <FaSignal />
+                                        <FaWifi />
+                                        <FaBatteryHalf />
+                                    </div>
+                                </div>
+                                <div className='phone-input'>
+                                    <FaSearch />
+                                    <span>The Cosmos</span>
+                                </div>
+                                <div className='phone-tab'>
+                                    <div class="tab-item is-active">Comets</div>
+                                    <div class="tab-item">Stars</div>
+                                    <div class="tab-item">Planets</div>
+                                    <div class="tab-item">Galaxies</div>
+                                </div>
+                                <div className='tab-img'>
+                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-4.jpg' alt='' className='tabimg' />
+                                    <div className='img-desc'>
+                                        Genius
+                                    </div>
+                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
                                         Genius
                                     </div>
