@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -11,7 +11,6 @@ const Header = ({ toggleTheme, isDarkMode }) => {
     setIsOpen(!isOpen);
   }
   const navigate = useNavigate();
-  const location = useLocation();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
