@@ -11,7 +11,7 @@ const Body = () => {
     elements.forEach((element) => {
       gsap.fromTo(
         element,
-        { y: '+=50', opacity: 0 },
+        { y: '+=70', opacity: 0 },
         {
           y: 0,
           opacity: 1,

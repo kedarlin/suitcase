@@ -35,14 +35,6 @@ const Header = ({ toggleTheme, isDarkMode }) => {
       );
     });
   }, []);
-  useEffect(() => {
-    const header = document.querySelector('.header');
-    if (header) {
-      header.classList.remove('visible');
-      void header.offsetWidth;
-      header.classList.add('visible');
-    }
-  }, [location.pathname]);
 
   return (
     <div className='header scrolleffectn'>
