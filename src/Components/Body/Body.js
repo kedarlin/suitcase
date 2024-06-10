@@ -1,33 +1,30 @@
 import React, { useEffect } from 'react';
 import './Body.css';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Body = () => {
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px 0px 20% 0px',
-      threshold: 0.1
-    };
+    gsap.registerPlugin(ScrollTrigger);
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    const elements = document.querySelectorAll('.scrolleffect');
+    elements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { y: '+=50', opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 100%',
+            marker: true,
+            toggleActions: 'play none none none',
+          },
         }
-      });
-    }, options);
-
-    const elementsToAnimate = document.querySelectorAll('.scrolleffect, .scrolleffectn');
-    elementsToAnimate.forEach(element => {
-      observer.observe(element);
+      );
     });
-
-    return () => {
-      elementsToAnimate.forEach(element => {
-        observer.unobserve(element);
-      });
-    };
   }, []);
 
   return (

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Header = ({ toggleTheme, isDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +12,29 @@ const Header = ({ toggleTheme, isDarkMode }) => {
   }
   const navigate = useNavigate();
   const location = useLocation();
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
+    const elements = document.querySelectorAll('.scrolleffectn');
+    elements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { y: '-=50', opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          delay: 0.5,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 100%',
+            marker: true,
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+  }, []);
   useEffect(() => {
     const header = document.querySelector('.header');
     if (header) {
