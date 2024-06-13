@@ -63,7 +63,7 @@ const Work = () => {
                     </h1>
                 </div>
                 <div className='work-boxes'>
-                    <Carousel
+                    {/* <Carousel
                         width="100%"
                         showThumbs={false}
                         showStatus={false}
@@ -71,14 +71,15 @@ const Work = () => {
                         autoPlay={true}
                         infiniteLoop={true}
                         interval={2000}
-                        >
+                        style={{ height: "600px"}}
+                        > */}
                         <div className='work-box'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
                         <div className='work-box'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                    </Carousel>
+                    {/* </Carousel> */}
                 </div>
                 <div className='work-sliders'>
                     <div className='slider'>
