@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import './Work.css';
-import { FaBatteryHalf, FaSearch, FaSignal, FaWifi } from 'react-icons/fa';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { LuSparkle } from 'react-icons/lu';
+import Phone from '../../Components/Phone/Phone';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Work = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,26 +21,6 @@ const Work = () => {
         setShowLaterAnimation(!showLaterAnimation);
     };
 
-    const [time, setTime] = useState('');
-
-    useEffect(() => {
-        const updateTime = () => {
-            const options = {
-                timeZone: 'Asia/Kolkata',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-            };
-            const indiaTime = new Date().toLocaleTimeString('en-US', options);
-            setTime(indiaTime);
-        };
-
-        updateTime();
-        const intervalId = setInterval(updateTime, 60000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
     useEffect(() => {
         if (isDarkMode) {
             document.body.classList.add('dark-mode');
@@ -46,31 +30,26 @@ const Work = () => {
     }, [isDarkMode]);
 
     useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '0px 0px 20% 0px',
-            threshold: 0.1
-        };
+        gsap.registerPlugin(ScrollTrigger);
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+        const elements = document.querySelectorAll('.scrolleffect');
+        elements.forEach((element) => {
+            gsap.fromTo(
+                element,
+                { y: '+=70', opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 100%',
+                        marker: true,
+                        toggleActions: 'play none none none',
+                    },
                 }
-            });
-        }, options);
-
-        const elementsToAnimate = document.querySelectorAll('.scrolleffect, .scrolleffectn');
-        elementsToAnimate.forEach(element => {
-            observer.observe(element);
+            );
         });
-
-        return () => {
-            elementsToAnimate.forEach(element => {
-                observer.unobserve(element);
-            });
-        };
     }, []);
 
     return (
@@ -84,12 +63,22 @@ const Work = () => {
                     </h1>
                 </div>
                 <div className='work-boxes'>
-                    <div className='work-box scrolleffect'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
-                    </div>
-                    <div className='work-box scrolleffect'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
-                    </div>
+                    <Carousel
+                        width="100%"
+                        showThumbs={false}
+                        showStatus={false}
+                        centerMode={true}
+                        autoPlay={true}
+                        infiniteLoop={true}
+                        interval={2000}
+                        >
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                    </Carousel>
                 </div>
                 <div className='work-sliders'>
                     <div className='slider'>
@@ -210,40 +199,8 @@ const Work = () => {
                             </div>
                         </div>
                         <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`} onClick={handleClick}>
-                            <div className="animation-1">
-                                <div className='noti-bar'>
-                                    <div className='noti-time'>{time}</div>
-                                    <span className='noti-notch'></span>
-                                    <div className='noti-icons'>
-                                        <FaSignal />
-                                        <FaWifi />
-                                        <FaBatteryHalf />
-                                    </div>
-                                </div>
-                                <div className='phone-input'>
-                                    <FaSearch />
-                                    <span>The Cosmos</span>
-                                </div>
-                                <div className='phone-tab'>
-                                    <div class="tab-item is-active">Comets</div>
-                                    <div class="tab-item">Stars</div>
-                                    <div class="tab-item">Planets</div>
-                                    <div class="tab-item">Galaxies</div>
-                                </div>
-                                <div className='tab-img'>
-                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-4.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                </div>
+                            <div className='phone-1'>
+                                <Phone />
                             </div>
                             <div className="animation-2">
                                 <div className="tab-img">
@@ -270,42 +227,10 @@ const Work = () => {
                         </div>
                         <div className='design-2'>
                             <div className='img-design'>
-                                <LuSparkle className='star'/>
+                                <LuSparkle className='star' />
                             </div>
-                            <div className="phone">
-                                <div className='noti-bar'>
-                                    <div className='noti-time'>{time}</div>
-                                    <span className='noti-notch'></span>
-                                    <div className='noti-icons'>
-                                        <FaSignal />
-                                        <FaWifi />
-                                        <FaBatteryHalf />
-                                    </div>
-                                </div>
-                                <div className='phone-input'>
-                                    <FaSearch />
-                                    <span>The Cosmos</span>
-                                </div>
-                                <div className='phone-tab'>
-                                    <div class="tab-item is-active">Comets</div>
-                                    <div class="tab-item">Stars</div>
-                                    <div class="tab-item">Planets</div>
-                                    <div class="tab-item">Galaxies</div>
-                                </div>
-                                <div className='tab-img'>
-                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-4.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                </div>
+                            <div className='phone-2'>
+                                <Phone />
                             </div>
                         </div>
                     </div>

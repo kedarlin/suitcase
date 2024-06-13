@@ -78,20 +78,19 @@
 }
 
 .work-boxes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
   padding: 20px 0;
 }
 
 .work-box {
-  height: 400px;
+  height: 600px;
+  width: 100%;
   background-color: #cfcff5;
   border-radius: 25px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .work-box img {
@@ -106,9 +105,6 @@
 }
 
 @media (max-width: 760px) {
-  .work-boxes {
-    grid-template-columns: 1fr;
-  }
   .anime-1{
     flex: none;
   }
@@ -327,35 +323,22 @@
 .later-animation {
   display: none;
   flex-direction: row;
+  padding: 0 20px;
+  height: 400px;
   gap: 30px;
   justify-content: space-between;
   overflow: hidden;
 }
 
-.animation-1,
 .animation-2 {
-  flex: 1;
-  opacity: 0;
   transition: all 0.5s ease;
   padding: 15px;
   background-color: #1b1b1e;
   border: solid 1px #8f8f8f82;
-}
-
-.animation-1 {
-  margin: 70px 0 0 30px;
-  display: flex;
-  height: 300px;
-  border-radius: 25px 25px 0 0;
-  flex-direction: column;
-  width: 100%;
-}
-
-.animation-2 {
   margin: -10px 30px 0 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 200px;
   height: 300px;
   border-radius: 0 0 25px 25px;
 }
@@ -363,9 +346,11 @@
 .show {
   display: flex;
 }
-
-.show .animation-1 {
-  opacity: 1;
+.hide{
+  display: none;
+}
+.show .phone-1 {
+  margin: 70px 0 0 30px; 
   animation: trans-reverse 1s;
 }
 
@@ -400,58 +385,6 @@
   100% {
     transform: translateY(0);
   }
-}
-
-.hide {
-  display: none;
-}
-
-.noti-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-.noti-notch {
-  background-color: black;
-  padding: 10px 35px;
-  border-radius: 15px;
-}
-
-.noti-icons {
-  display: flex;
-  gap: 2px;
-}
-
-.phone-input {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  background-color: #29292b;
-  align-items: center;
-  font-size: 12px;
-}
-
-.phone-input span {
-  padding-left: 20px;
-  font-weight: 600;
-}
-
-.phone-tab {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding: 0 10px;
-  gap: 5px;
-  font-size: 12px;
-}
-
-.is-active {
-  padding-bottom: 10px;
-  border-bottom: #fff solid 3px;
 }
 
 .tab-img {
@@ -498,22 +431,24 @@
 .design-2:hover > .img-design {
   transform: translateX(300%) rotate(240deg) scale(0);
 }
-.phone {
+.phone-2 {
   margin-top: 40px;
   height: 100%;
   position: absolute;
-  width: 80%;
-  max-width: 200px;
-  border: solid 1px #878788;
   border-radius: 25px 25px 0 0;
   padding: 20px 10px;
   transition: 1s;
-  transform: rotate(-50deg) translateX(-200%);
   overflow: hidden;
+  transform: rotate(-50deg) translateX(-200%);
 }
-.design-2:hover > .phone {
+.design-2:hover > .phone-2 {
   display: block;
   transform: rotate(0deg) translateX(0);
+}
+@media (max-width: 1300px) {
+  .animation-2 {
+    display: none;
+  }
 }
 @media (max-width: 1000px) {
   .anime-1{
@@ -527,10 +462,9 @@
     margin-right: 30px;
   }
   .later-animation {
-    width: 50%;
-  }
-  .animation-2 {
-    display: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
   .work-animations {
     flex-direction: column;

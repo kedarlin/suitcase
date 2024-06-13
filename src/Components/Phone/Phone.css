@@ -1,0 +1,83 @@
+.phone {
+  transition: all 0.5s ease;
+  padding: 15px;
+  background-color: #1b1b1e;
+  border: solid 1px #8f8f8f82;
+  display: flex;
+  border-radius: 25px 25px 0 0;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.phone-noti-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.phone-noti-notch {
+  background-color: black;
+  padding: 10px 35px;
+  border-radius: 15px;
+}
+
+.phone-noti-icons {
+  display: flex;
+  gap: 2px;
+}
+
+.phone-input {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #29292b;
+  align-items: center;
+  font-size: 12px;
+}
+
+.phone-input span {
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+.phone-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 10px;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.is-active {
+  padding-bottom: 10px;
+  border-bottom: #fff solid 3px;
+}
+
+.phone-tab-img{
+  overflow-y: scroll;
+}
+.phone-tab-img::-webkit-scrollbar{
+  width: 0px;
+}
+.tab-img {
+  padding: 20px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.tabimg {
+  width: 100%;
+}
+
+.img-desc {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}

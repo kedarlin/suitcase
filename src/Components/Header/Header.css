@@ -115,6 +115,16 @@
 }
 .header-menu-list{
     display: none;
+    overflow: hidden;
+    animation: listopener 1s;
+}
+@keyframes listopener {
+    0% {
+        height: 0px;
+    }
+    100%{
+        height: 232px;
+    }
 }
 @media screen and (max-width: 1300px) and (min-width: 900px) {
     .header {

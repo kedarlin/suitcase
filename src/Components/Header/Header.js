@@ -69,7 +69,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
         </div>
       </div>
       {isOpen && (
-        <div className='header-menu-list'>
+        <div className={`header-menu-list ${isOpen ? 'open' : ''}`}>
           <div className='header-item-container' onClick={() => navigate('/work')}>
             <div className='header-item'>Work</div>
             <div className='header-item-h'>Work</div>
