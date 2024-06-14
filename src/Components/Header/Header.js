@@ -66,7 +66,7 @@ const Header = () => {
         </div>
         <div className='header-navbar-m'>
           <div onClick={toggleMenu} style={{ cursor: "pointer", alignItems: "center" }}>
-            {isOpen ? <FaTimes fontSize="25px" style={{ color: theme === 'light'? "white":"black"}} /> : <FaBars fontSize="25px" style={{ color: theme === 'light'? "white":"black"}}/>}
+            {isOpen ? <FaTimes fontSize="25px" style={{ color:"white"}} /> : <FaBars fontSize="25px" style={{ color: "white"}}/>}
           </div>
         </div>
       </div>
