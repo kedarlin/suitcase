@@ -70,7 +70,7 @@
 
 .work-head h1 {
   font-size: 54px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .work-head h1 .work-title-span {
@@ -136,11 +136,11 @@
   flex-direction: column;
   overflow: hidden;
   gap: 40px;
-  -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
 }
 
-.work-sliders.dark-mode {
-  -webkit-mask: none;
+.work-sliders.dark-slide {
+  -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
+  /* -webkit-mask: none; */
 }
 
 .work-slides {

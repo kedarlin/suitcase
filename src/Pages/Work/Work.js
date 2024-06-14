@@ -127,7 +127,7 @@ const Work = () => {
                         </div>
                     {/* </Carousel> */}
                 </div>
-                <div className={`work-sliders ${theme==='dark'?'dark-mode':''}`}>
+                <div className={`work-sliders ${theme==='dark'?'dark-slide':''}`}>
                     <div className='slider'>
                         <div className='slide-track'>
                             <div className='slide'>
@@ -236,7 +236,7 @@ const Work = () => {
                 <div className="work-animations">
                     <div className="anime-1">
                         <div className={`initial-animation ${showLaterAnimation ? 'hide' : ''}`}>
-                            <div className="animation-head scrolleffect" style={{ color: theme === 'light'? "white":"black"}}>
+                            <div className="animation-head scrolleffect" style={{ color:"white"}}>
                                 <h3 className="animation-title">Transforms your ideas into designs</h3>
                                 <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
                             </div>
@@ -268,7 +268,7 @@ const Work = () => {
                         </div>
                     </div>
                     <div className='anime-2'>
-                        <div className="animation-head-2 scrolleffect" style={{ color: theme === 'light'? "white":"black"}}>
+                        <div className="animation-head-2 scrolleffect" style={{ color: "white"}}>
                             <h3 className="animation-title">Design with AI magic</h3>
                             <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
                         </div>
