@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { LuSparkle } from 'react-icons/lu';
 import Phone from '../../Components/Phone/Phone';
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Work = () => {
@@ -79,9 +79,21 @@ const Work = () => {
                         <div className='work-box'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
                     {/* </Carousel> */}
                 </div>
-                <div className='work-sliders'>
+                <div className={`work-sliders ${isDarkMode?'dark-mode':''}`}>
                     <div className='slider'>
                         <div className='slide-track'>
                             <div className='slide'>
