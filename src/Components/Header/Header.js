@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Header.css';
 import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ThemeContext } from '../../Themes/ThemeContext';
 
-const Header = ({ toggleTheme, isDarkMode }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,12 +61,12 @@ const Header = ({ toggleTheme, isDarkMode }) => {
           </div>
           <button className='header-button'>Remix</button>
           <button className='header-button' onClick={toggleTheme} type='toggle'>
-            {isDarkMode ? <FaMoon /> : <FaSun />}
+            {theme==='light' ? <FaMoon /> : <FaSun />}
           </button>
         </div>
         <div className='header-navbar-m'>
           <div onClick={toggleMenu} style={{ cursor: "pointer", alignItems: "center" }}>
-            {isOpen ? <FaTimes fontSize="25px" className='darkmode' /> : <FaBars fontSize="25px" className='darkmode' />}
+            {isOpen ? <FaTimes fontSize="25px" style={{ color: theme === 'light'? "white":"black"}} /> : <FaBars fontSize="25px" style={{ color: theme === 'light'? "white":"black"}}/>}
           </div>
         </div>
       </div>
@@ -84,7 +86,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
           </div>
           <button className='header-button'>Remix</button>
           <button className='header-button' onClick={toggleTheme} type='toggle'>
-            {isDarkMode ? <FaMoon /> : <FaSun />}
+            {theme==='dark' ? <FaMoon /> : <FaSun />}
           </button>
         </div>
       )}

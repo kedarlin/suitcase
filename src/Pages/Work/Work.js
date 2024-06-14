@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import './Work.css';
@@ -8,13 +8,11 @@ import { LuSparkle } from 'react-icons/lu';
 import Phone from '../../Components/Phone/Phone';
 // import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { ThemeContext } from '../../Themes/ThemeContext';
 
 const Work = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { theme } = useContext(ThemeContext);
 
-    const toggleTheme = () => {
-        setIsDarkMode(prevMode => !prevMode);
-    };
     const [showLaterAnimation, setShowLaterAnimation] = useState(false);
 
     const handleClick = () => {
@@ -22,12 +20,12 @@ const Work = () => {
     };
 
     useEffect(() => {
-        if (isDarkMode) {
+        if (theme==='dark') {
             document.body.classList.add('dark-mode');
         } else {
             document.body.classList.remove('dark-mode');
         }
-    }, [isDarkMode]);
+    }, [theme]);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -50,11 +48,47 @@ const Work = () => {
                 }
             );
         });
+        const elementLeftSide = document.querySelectorAll('.scrolleffectleftside');
+        elementLeftSide.forEach((element) => {
+            gsap.fromTo(
+                element,
+                { x: '-=70', opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 90%',
+                        marker: true,
+                        toggleActions: 'play none none none',
+                    },
+                }
+            );
+        });
+        const elementRightSide = document.querySelectorAll('.scrolleffectrightside');
+        elementRightSide.forEach((element) => {
+            gsap.fromTo(
+                element,
+                { x: '+=70', opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 90%',
+                        marker: true,
+                        toggleActions: 'play none none none',
+                    },
+                }
+            );
+        });
     }, []);
 
     return (
         <div className='work'>
-            <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+            <Header />
             <div className='work-content'>
                 <div className='work-head scrolleffect'>
                     <h1 className='work-title'>
@@ -73,27 +107,27 @@ const Work = () => {
                         interval={2000}
                         style={{ height: "600px"}}
                         > */}
-                        <div className='work-box'>
+                        <div className='work-box scrolleffect'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                        <div className='work-box'>
+                        <div className='work-box scrolleffectleftside'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                        <div className='work-box'>
+                        <div className='work-box scrolleffectrightside'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                        <div className='work-box'>
+                        <div className='work-box scrolleffect'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                        <div className='work-box'>
+                        <div className='work-box scrolleffectleftside'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
-                        <div className='work-box'>
+                        <div className='work-box scrolleffectrightside'>
                             <img src='./Assets/box-img-1.png' alt='box-img' />
                         </div>
                     {/* </Carousel> */}
                 </div>
-                <div className={`work-sliders ${isDarkMode?'dark-mode':''}`}>
+                <div className={`work-sliders ${theme==='dark'?'dark-mode':''}`}>
                     <div className='slider'>
                         <div className='slide-track'>
                             <div className='slide'>
@@ -202,7 +236,7 @@ const Work = () => {
                 <div className="work-animations">
                     <div className="anime-1">
                         <div className={`initial-animation ${showLaterAnimation ? 'hide' : ''}`}>
-                            <div className="animation-head scrolleffect">
+                            <div className="animation-head scrolleffect" style={{ color: theme === 'light'? "white":"black"}}>
                                 <h3 className="animation-title">Transforms your ideas into designs</h3>
                                 <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
                             </div>
@@ -234,7 +268,7 @@ const Work = () => {
                         </div>
                     </div>
                     <div className='anime-2'>
-                        <div className="animation-head-2 scrolleffect">
+                        <div className="animation-head-2 scrolleffect" style={{ color: theme === 'light'? "white":"black"}}>
                             <h3 className="animation-title">Design with AI magic</h3>
                             <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
                         </div>

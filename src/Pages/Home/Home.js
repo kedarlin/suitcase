@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Header from '../../Components/Header/Header'
 import Body from '../../Components/Body/Body'
 import Footer from '../../Components/Footer/Footer'
+import { ThemeContext } from '../../Themes/ThemeContext'
 
 const Home = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    const toggleTheme = () => {
-        setIsDarkMode(prevMode => !prevMode);
-    };
+    const { theme} = useContext(ThemeContext);
     useEffect(() => {
-        if (isDarkMode) {
+        if (theme==='dark') {
             document.body.classList.add('dark-mode');
         } else {
             document.body.classList.remove('dark-mode');
         }
-    }, [isDarkMode]);
+    }, [theme]);
     return (
         <div className='home'>
-            <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+            <Header />
             <Body />
             <Footer />
         </div>
