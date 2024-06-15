@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Body.css';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ThemeContext } from '../../Themes/ThemeContext';
 
 const Body = () => {
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +60,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className='body-2 scrolleffect'>
+      <div className='body-2 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
         <img src='/Assets/img-1.png' alt='img-1' className='body-2-img' />
       </div>
 
@@ -68,11 +70,11 @@ const Body = () => {
         </h4>
       </div>
 
-      <div className='body-4 scrolleffect'>
+      <div className='body-4 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
         <img src='/Assets/img-2.png' alt='img-2' className='body-4-img' />
       </div>
 
-      <div className='body-5 scrolleffect'>
+      <div className='body-5 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
         <img src='/Assets/img-3.png' alt='img-5' className='body-5-img' />
       </div>
 

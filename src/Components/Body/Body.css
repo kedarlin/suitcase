@@ -64,7 +64,7 @@
 .body-2-img {
     width: 40%;
     height: auto;
-    overflow: visible;
+    border-radius: 40px 40px 0px 0px;
 }
 
 .body-3-desc {
@@ -88,7 +88,7 @@
 .body-4-img {
     padding: 20px;
     height: auto;
-    overflow: visible;
+    border-radius: 50px;
 }
 
 .body-5 {
@@ -105,7 +105,7 @@
 .body-5-img {
     padding: 20px;
     height: auto;
-    overflow: visible;
+    border-radius: 50px
 }
 
 .body-6-desc {
