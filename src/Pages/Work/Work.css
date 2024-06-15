@@ -337,6 +337,12 @@
   color: white;
   border: solid 1px #878788;
   cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.input-button.enlarge {
+  transform: scale(1.5);
+  opacity: 0;
 }
 
 .later-animation {

@@ -12,15 +12,23 @@ import { ThemeContext } from '../../Themes/ThemeContext';
 
 const Work = () => {
     const { theme } = useContext(ThemeContext);
-
+    const [showInitialAnimation, setShowInitialAnimation] = useState(true);
     const [showLaterAnimation, setShowLaterAnimation] = useState(false);
+    const [showGif, setShowGif] = useState(false);
 
     const handleClick = () => {
-        setShowLaterAnimation(!showLaterAnimation);
-    };
+        setShowInitialAnimation(!showInitialAnimation);
+        const duration = showInitialAnimation ? 2000 : 0;
+        if(showInitialAnimation)
+        setShowGif(true);
+        setTimeout(() => {
+          setShowGif(false);
+          setShowLaterAnimation(!showLaterAnimation);
+        }, duration);
+      };
 
     useEffect(() => {
-        if (theme==='dark') {
+        if (theme === 'dark') {
             document.body.classList.add('dark-mode');
         } else {
             document.body.classList.remove('dark-mode');
@@ -107,27 +115,27 @@ const Work = () => {
                         interval={2000}
                         style={{ height: "600px"}}
                         > */}
-                        <div className='work-box scrolleffect'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
-                        <div className='work-box scrolleffectleftside'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
-                        <div className='work-box scrolleffectrightside'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
-                        <div className='work-box scrolleffect'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
-                        <div className='work-box scrolleffectleftside'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
-                        <div className='work-box scrolleffectrightside'>
-                            <img src='./Assets/box-img-1.png' alt='box-img' />
-                        </div>
+                    <div className='work-box scrolleffect'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffectleftside'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffectrightside'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffect'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffectleftside'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
+                    <div className='work-box scrolleffectrightside'>
+                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    </div>
                     {/* </Carousel> */}
                 </div>
-                <div className={`work-sliders ${theme==='dark'?'dark-slide':''}`}>
+                <div className={`work-sliders ${theme === 'dark' ? 'dark-slide' : ''}`}>
                     <div className='slider'>
                         <div className='slide-track'>
                             <div className='slide'>
@@ -234,22 +242,27 @@ const Work = () => {
                     </div>
                 </div>
                 <div className="work-animations">
-                    <div className="anime-1" style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
-                        <div className={`initial-animation ${showLaterAnimation ? 'hide' : ''}`}>
-                            <div className="animation-head scrolleffect" style={{ color:theme==='light'?"black":"white"}}>
+                    <div className="anime-1" style={{ backgroundColor: theme === 'light' ? "#f2f2f2" : "" }}>
+                        <div className={`initial-animation ${showInitialAnimation ? "":'hide'}`}>
+                            <div className="animation-head scrolleffect" style={{ color: theme === 'light' ? "black" : "white" }}>
                                 <h3 className="animation-title">Transforms your ideas into designs</h3>
                                 <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
                             </div>
                             <div className="animation-input">
-                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" style={{ backgroundColor: theme==='light'?"#d3d3d3":"",color: theme==='light'?"black":"white"}}/>
+                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" style={{ backgroundColor: theme === 'light' ? "#d3d3d3" : "", color: theme === 'light' ? "black" : "white" }} />
                                 <button className="input-button" onClick={handleClick}>Generate</button>
                             </div>
                         </div>
+                        {showGif && (
+                            <div className="gif-container" style={{display: "flex",width: "100%", alignContent:"center", justifyContent:"center"}}>
+                                <img src="/Assets/spinner.gif" alt="Loading animation"/>
+                            </div>
+                        )}
                         <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`} onClick={handleClick}>
                             <div className='phone-1'>
                                 <Phone />
                             </div>
-                            <div className="animation-2" style={{ backgroundColor: theme==='light'?"#d3d3d3":"",color: theme==='light'?"black":"white"}}>
+                            <div className="animation-2" style={{ backgroundColor: theme === 'light' ? "#d3d3d3" : "", color: theme === 'light' ? "black" : "white" }}>
                                 <div className="tab-img">
                                     <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
@@ -267,8 +280,8 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='anime-2' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
-                        <div className="animation-head-2 scrolleffect" style={{ color:theme==='light'?"black":"white"}}>
+                    <div className='anime-2' style={{ backgroundColor: theme === 'light' ? "#f2f2f2" : "" }}>
+                        <div className="animation-head-2 scrolleffect" style={{ color: theme === 'light' ? "black" : "white" }}>
                             <h3 className="animation-title">Design with AI magic</h3>
                             <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
                         </div>
