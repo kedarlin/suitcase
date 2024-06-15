@@ -42,7 +42,7 @@ const Header = () => {
       <div className='header-n'>
         <div className='header-logo-container' onClick={() => navigate('/')}>
           <div className='header-logo'>oslo</div>
-          <div className='header-logo-h'>oslo</div>
+          <div className='header-logo-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>oslo</div>
         </div>
         <div className='header-navbar'>
           <div className='header-items'>
