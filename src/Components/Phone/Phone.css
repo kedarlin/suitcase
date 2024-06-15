@@ -48,37 +48,39 @@
 .phone-tab {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 20px;
   padding: 0 10px;
   gap: 5px;
   font-size: 12px;
+  cursor: pointer;
 }
 
-.is-active {
+.phone-tab-item {
   padding-bottom: 10px;
-  border-bottom: #fff solid 3px;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s ease;
 }
 
-.phone-tab-img{
+.phone-tab-item.is-active {
+  border-bottom: 3px solid white;
+}
+
+.phone-tab-img {
+  margin-top: 10px;
   overflow-y: scroll;
 }
-.phone-tab-img::-webkit-scrollbar{
+
+.phone-tab-img::-webkit-scrollbar {
   width: 0px;
-}
-.tab-img {
-  padding: 20px;
-  overflow-x: scroll;
-  scrollbar-width: none;
 }
 
 .tabimg {
   width: 100%;
 }
 
-.img-desc {
-  margin: 20px 0;
-  font-size: 16px;
+.phone-img-desc {
+  margin: 10px 0;
+  font-size: 14px;
   font-weight: 600;
-  color: white;
 }
