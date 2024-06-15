@@ -490,7 +490,9 @@
     transition: 0.6s ease-in-out;
     transform: rotate(-20deg) translateX(-250%);
   }
-
+  .show .phone-1{
+    margin: 70px 0 0 0;
+  }
   .anime-1 {
     flex: 1;
     display: flex;
@@ -546,6 +548,6 @@
 
   .phone-2 {
     transition: 0.6s ease-in-out;
-    transform: rotate(-20deg) translateX(-150%);
+    transform: rotate(-20deg) translateX(-180%);
   }
 }
