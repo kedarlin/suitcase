@@ -48,15 +48,15 @@ const Header = () => {
           <div className='header-items'>
             <div className='header-item-container' onClick={() => navigate('/work')}>
               <div className='header-item'>Work</div>
-              <div className='header-item-h'>Work</div>
+              <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Work</div>
             </div>
             <div className='header-item-container' onClick={() => navigate('/studio')}>
               <div className='header-item'>Studio</div>
-              <div className='header-item-h'>Studio</div>
+              <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Studio</div>
             </div>
             <div className='header-item-container' onClick={() => navigate('/contact')}>
               <div className='header-item'>Contact</div>
-              <div className='header-item-h'>Contact</div>
+              <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Contact</div>
             </div>
           </div>
           <button className='header-button'>Remix</button>
@@ -74,15 +74,15 @@ const Header = () => {
         <div className={`header-menu-list ${isOpen ? 'open' : ''}`}>
           <div className='header-item-container' onClick={() => navigate('/work')}>
             <div className='header-item'>Work</div>
-            <div className='header-item-h'>Work</div>
+            <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Work</div>
           </div>
           <div className='header-item-container' onClick={() => navigate('/studio')}>
             <div className='header-item'>Studio</div>
-            <div className='header-item-h'>Studio</div>
+            <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Studio</div>
           </div>
           <div className='header-item-container' onClick={() => navigate('/contact')}>
             <div className='header-item'>Contact</div>
-            <div className='header-item-h'>Contact</div>
+            <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Contact</div>
           </div>
           <button className='header-button'>Remix</button>
           <button className='header-button' onClick={toggleTheme} type='toggle'>
