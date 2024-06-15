@@ -104,9 +104,9 @@
     grid-template-columns: 1fr;
   }
 
-  .work-box:nth-child(1),
-  .work-box:nth-child(4),
-  .work-box:nth-child(7) {
+  .work-box-project:nth-child(3),
+  .work-box-project:nth-child(6),
+  .work-box-project:nth-child(9) {
     grid-column: unset;
   }
 }
