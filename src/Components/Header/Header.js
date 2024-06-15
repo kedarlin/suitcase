@@ -50,11 +50,11 @@ const Header = () => {
               <div className='header-item'>Work</div>
               <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Work</div>
             </div>
-            <div className='header-item-container' onClick={() => navigate('/studio')}>
+            <div className='header-item-container' /*onClick={() => navigate('/studio')}*/>
               <div className='header-item'>Studio</div>
               <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Studio</div>
             </div>
-            <div className='header-item-container' onClick={() => navigate('/contact')}>
+            <div className='header-item-container' /*onClick={() => navigate('/contact')}*/>
               <div className='header-item'>Contact</div>
               <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Contact</div>
             </div>
@@ -76,11 +76,11 @@ const Header = () => {
             <div className='header-item'>Work</div>
             <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Work</div>
           </div>
-          <div className='header-item-container' onClick={() => navigate('/studio')}>
+          <div className='header-item-container' /*onClick={() => navigate('/studio')}*/>
             <div className='header-item'>Studio</div>
             <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Studio</div>
           </div>
-          <div className='header-item-container' onClick={() => navigate('/contact')}>
+          <div className='header-item-container' /*onClick={() => navigate('/contact')}*/>
             <div className='header-item'>Contact</div>
             <div className='header-item-h' style={{ color: theme === 'light' ? "#b9b9b9" : "" }}>Contact</div>
           </div>
