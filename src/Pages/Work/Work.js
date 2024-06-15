@@ -234,14 +234,14 @@ const Work = () => {
                     </div>
                 </div>
                 <div className="work-animations">
-                    <div className="anime-1">
+                    <div className="anime-1" style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
                         <div className={`initial-animation ${showLaterAnimation ? 'hide' : ''}`}>
-                            <div className="animation-head scrolleffect" style={{ color:"white"}}>
+                            <div className="animation-head scrolleffect" style={{ color:theme==='light'?"black":"white"}}>
                                 <h3 className="animation-title">Transforms your ideas into designs</h3>
                                 <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
                             </div>
                             <div className="animation-input">
-                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" />
+                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" style={{ backgroundColor: theme==='light'?"#d3d3d3":"",color: theme==='light'?"black":"white"}}/>
                                 <button className="input-button" onClick={handleClick}>Generate</button>
                             </div>
                         </div>
@@ -249,7 +249,7 @@ const Work = () => {
                             <div className='phone-1'>
                                 <Phone />
                             </div>
-                            <div className="animation-2">
+                            <div className="animation-2" style={{ backgroundColor: theme==='light'?"#d3d3d3":"",color: theme==='light'?"black":"white"}}>
                                 <div className="tab-img">
                                     <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
                                     <div className='img-desc'>
@@ -267,8 +267,8 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='anime-2'>
-                        <div className="animation-head-2 scrolleffect" style={{ color: "white"}}>
+                    <div className='anime-2' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
+                        <div className="animation-head-2 scrolleffect" style={{ color:theme==='light'?"black":"white"}}>
                             <h3 className="animation-title">Design with AI magic</h3>
                             <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
                         </div>

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaBatteryHalf, FaSearch, FaSignal, FaWifi } from 'react-icons/fa'
 import './Phone.css'
+import { ThemeContext } from '../../Themes/ThemeContext';
 
 const Phone = () => {
     const [time, setTime] = useState('');
-
+    const { theme } = useContext(ThemeContext);
     useEffect(() => {
         const updateTime = () => {
             const options = {
@@ -23,7 +24,7 @@ const Phone = () => {
         return () => clearInterval(intervalId);
     }, []);
     return (
-        <div className="phone">
+        <div className="phone" style={{ backgroundColor: theme==='light'?"#d3d3d3":"",color: theme==='light'?"black":"white"}}>
             <div className='phone-noti-bar'>
                 <div className='phone-noti-time'>{time}</div>
                 <span className='phone-noti-notch'></span>
@@ -33,7 +34,7 @@ const Phone = () => {
                     <FaBatteryHalf />
                 </div>
             </div>
-            <div className='phone-input'>
+            <div className='phone-input' style={{ backgroundColor: theme==='light'?"#a0a0a0":"",color: theme==='light'?"black":"white"}}>
                 <FaSearch />
                 <span>The Cosmos</span>
             </div>
