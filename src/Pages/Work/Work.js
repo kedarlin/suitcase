@@ -1,39 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import './Work.css';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { LuSparkle } from 'react-icons/lu';
-import Phone from '../../Components/Phone/Phone';
-// import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { ThemeContext } from '../../Themes/ThemeContext';
+import AnimationOne from '../../Components/Animation-1/Animation_1';
+import AnimationTwo from '../../Components/Animation-2/Animation_2';
+import SliderAnimation from '../../Components/SliderAnimation/SliderAnimation';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 const Work = () => {
-    const { theme } = useContext(ThemeContext);
-    const [showInitialAnimation, setShowInitialAnimation] = useState(true);
-    const [showLaterAnimation, setShowLaterAnimation] = useState(false);
-    const [showGif, setShowGif] = useState(false);
-
-    const handleClick = () => {
-        setShowInitialAnimation(!showInitialAnimation);
-        const duration = showInitialAnimation ? 2000 : 0;
-        if(showInitialAnimation)
-        setShowGif(true);
-        setTimeout(() => {
-          setShowGif(false);
-          setShowLaterAnimation(!showLaterAnimation);
-        }, duration);
-      };
-
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-    }, [theme]);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -105,195 +82,86 @@ const Work = () => {
                     </h1>
                 </div>
                 <div className='work-boxes'>
-                    {/* <Carousel
-                        width="100%"
-                        showThumbs={false}
-                        showStatus={false}
-                        centerMode={true}
-                        autoPlay={true}
-                        infiniteLoop={true}
-                        interval={2000}
-                        style={{ height: "600px"}}
-                        > */}
-                    <div className='work-box scrolleffect'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    <div className='work-box-project scrolleffectleftside'>
+                        <div className='work-box scrolleffect'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box-desc'>
+                            <div className='work-box-name'>
+                                <p className='work-box-title'>Suitcase App</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                            <div className='work-box-name-h'>
+                                <p className='work-box-title'>Travel Smart and Safety</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                        </div>
                     </div>
-                    <div className='work-box scrolleffectleftside'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    <div className='work-box-project scrolleffectrightside'>
+                        <div className='work-box scrolleffect'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box-desc'>
+                            <div className='work-box-name'>
+                                <p className='work-box-title'>Suitcase App</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                            <div className='work-box-name-h'>
+                                <p className='work-box-title'>Travel Smart and Safety</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                        </div>
                     </div>
-                    <div className='work-box scrolleffectrightside'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    <div className='work-box-project scrolleffect'>
+                        <div className='work-box scrolleffect'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box-desc'>
+                            <div className='work-box-name'>
+                                <p className='work-box-title'>Suitcase App</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                            <div className='work-box-name-h'>
+                                <p className='work-box-title'>Travel Smart and Safety</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                        </div>
                     </div>
-                    <div className='work-box scrolleffect'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
+                    <div className='work-box-project scrolleffectleftside'>
+                        <div className='work-box scrolleffect'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box-desc'>
+                            <div className='work-box-name'>
+                                <p className='work-box-title'>Suitcase App</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                            <div className='work-box-name-h'>
+                                <p className='work-box-title'>Travel Smart and Safety</p>
+                                <FiArrowUpRight size={20} />
+                            </div>
+                        </div>
                     </div>
-                    <div className='work-box scrolleffectleftside'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
-                    </div>
-                    <div className='work-box scrolleffectrightside'>
-                        <img src='./Assets/box-img-1.png' alt='box-img' />
-                    </div>
-                    {/* </Carousel> */}
-                </div>
-                <div className={`work-sliders ${theme === 'dark' ? 'dark-slide' : ''}`}>
-                    <div className='slider'>
-                        <div className='slide-track'>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-1.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
+                    <div className='work-box-project scrolleffectrightside'>
+                        <div className='work-box scrolleffect'>
+                            <img src='./Assets/box-img-1.png' alt='box-img' />
+                        </div>
+                        <div className='work-box-desc'>
+                            <div className='work-box-name'>
+                                <p className='work-box-title'>Suitcase App</p>
+                                <FiArrowUpRight size={20} />
                             </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-2.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-3.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-4.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-1.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-2.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-3.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-4.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='slide'>
-                                <img src='/Assets/slide-img-5.jpg' alt='slide-img' className='ori-img' />
-                                <div className='slide-hover'>
-                                    <img src='/Assets/hover-img.jpg' alt='slide-img' className='hov-img' />
-                                    <div className='slide-cont'>
-                                        <h3 className='slide-title'>Project</h3>
-                                        <h5 className='slide-desc'>This was done by the Portfolio's name called oslo company</h5>
-                                    </div>
-                                </div>
+                            <div className='work-box-name-h'>
+                                <p className='work-box-title'>Travel Smart and Safety</p>
+                                <FiArrowUpRight size={20} />
                             </div>
                         </div>
                     </div>
                 </div>
+                <SliderAnimation />
                 <div className="work-animations">
-                    <div className="anime-1" style={{ backgroundColor: theme === 'light' ? "#f2f2f2" : "" }}>
-                        <div className={`initial-animation ${showInitialAnimation ? "":'hide'}`}>
-                            <div className="animation-head scrolleffect" style={{ color: theme === 'light' ? "black" : "white" }}>
-                                <h3 className="animation-title">Transforms your ideas into designs</h3>
-                                <h5 className="animation-desc">Genius creates fully-editable UI designs with just a simple product description.</h5>
-                            </div>
-                            <div className="animation-input">
-                                <input className="input-animation" type="text" placeholder="An app to book intergalactic travel" style={{ backgroundColor: theme === 'light' ? "#d3d3d3" : "", color: theme === 'light' ? "black" : "white" }} />
-                                <button className="input-button" onClick={handleClick}>Generate</button>
-                            </div>
-                        </div>
-                        {showGif && (
-                            <div className="gif-container" style={{display: "flex",width: "100%", alignContent:"center", justifyContent:"center"}}>
-                                <img src="/Assets/spinner.gif" alt="Loading animation"/>
-                            </div>
-                        )}
-                        <div className={`later-animation ${showLaterAnimation ? 'show' : ''}`} onClick={handleClick}>
-                            <div className='phone-1'>
-                                <Phone />
-                            </div>
-                            <div className="animation-2" style={{ backgroundColor: theme === 'light' ? "#d3d3d3" : "", color: theme === 'light' ? "black" : "white" }}>
-                                <div className="tab-img">
-                                    <img src='/Assets/slide-img-2.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-5.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                    <img src='/Assets/slide-img-1.jpg' alt='' className='tabimg' />
-                                    <div className='img-desc'>
-                                        Genius
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='anime-2' style={{ backgroundColor: theme === 'light' ? "#f2f2f2" : "" }}>
-                        <div className="animation-head-2 scrolleffect" style={{ color: theme === 'light' ? "black" : "white" }}>
-                            <h3 className="animation-title">Design with AI magic</h3>
-                            <h5 className="animation-desc">Unlock your creativity and bring ideas to life with AI-powered design utilities.</h5>
-                        </div>
-                        <div className='design-2'>
-                            <div className='img-design'>
-                                <LuSparkle className='star' />
-                            </div>
-                            <div className='phone-2'>
-                                <Phone />
-                            </div>
-                        </div>
-                    </div>
+                    <AnimationOne />
+                    <AnimationTwo />
                 </div>
             </div>
             <Footer />
