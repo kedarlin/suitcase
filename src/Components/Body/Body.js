@@ -60,24 +60,24 @@ const Body = () => {
         </div>
       </div>
 
-      <div className='body-oslo-1'>
+      <div className='body-oslo-1 scrolleffect'>
         <img className='body-oslo-img-1' src='/Assets/oslo_phone_1.avif' alt='oslo-phone-1' />
       </div>
-      <div className='body-3'>
+      <div className='body-3 scrolleffect'>
         <h4 className='body-3-desc scrolleffect'>
           Through extensive user research, we discovered that many e-bike users felt overwhelmed by the technology and controls on their bikes. To address this, we created a simple and intuitive interface that allows riders to easily adjust their level of assist and monitor their battery life. We also incorporated GPS navigation, allowing riders to plan their route and track their progress.
         </h4>
       </div>
       <div className='body-oslo-2'>
-        <img className='body-oslo-img-2' src='/Assets/oslo_phone_2.avif' alt='oslo-phone-2' />
-        <img className='body-oslo-img-2' src='/Assets/oslo_phone_3.avif' alt='oslo-phone-2' />
+        <img className='body-oslo-img-2 scrolleffect' src='/Assets/oslo_phone_2.avif' alt='oslo-phone-2' />
+        <img className='body-oslo-img-2 scrolleffect' src='/Assets/oslo_phone_3.avif' alt='oslo-phone-2' />
       </div>
-      <div className='body-3'>
+      <div className='body-3 scrolleffect'>
         <h4 className='body-3-desc scrolleffect'>
           Through extensive user research, we discovered that many e-bike users felt overwhelmed by the technology and controls on their bikes. To address this, we created a simple and intuitive interface that allows riders to easily adjust their level of assist and monitor their battery life. We also incorporated GPS navigation, allowing riders to plan their route and track their progress.
         </h4>
       </div>
-      <div className='body-oslo-1'>
+      <div className='body-oslo-1 scrolleffect'>
         <img className='body-oslo-img-1' src='/Assets/oslo_phone_1.avif' alt='oslo-phone-1' />
       </div>
       {/* <div className='body-2 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
