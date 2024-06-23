@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Work from './Pages/Work/Work';
 import { ThemeProvider } from './Themes/ThemeContext';
+import Studio from './Pages/Studio/Studio';
+import Contact from './Pages/Contacts/Contact';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/work' element={<Work />} />
+            <Route path='/studio' element={<Studio />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
         </div>
       </Router>
