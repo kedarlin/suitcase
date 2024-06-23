@@ -60,15 +60,30 @@ const Body = () => {
         </div>
       </div>
 
-      <div className='body-2 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
-        <img src='/Assets/img-1.png' alt='img-1' className='body-2-img' />
+      <div className='body-oslo-1'>
+        <img className='body-oslo-img-1' src='/Assets/oslo_phone_1.avif' alt='oslo-phone-1' />
       </div>
-
       <div className='body-3'>
         <h4 className='body-3-desc scrolleffect'>
           Through extensive user research, we discovered that many e-bike users felt overwhelmed by the technology and controls on their bikes. To address this, we created a simple and intuitive interface that allows riders to easily adjust their level of assist and monitor their battery life. We also incorporated GPS navigation, allowing riders to plan their route and track their progress.
         </h4>
       </div>
+      <div className='body-oslo-2'>
+        <img className='body-oslo-img-2' src='/Assets/oslo_phone_2.avif' alt='oslo-phone-2' />
+        <img className='body-oslo-img-2' src='/Assets/oslo_phone_3.avif' alt='oslo-phone-2' />
+      </div>
+      <div className='body-3'>
+        <h4 className='body-3-desc scrolleffect'>
+          Through extensive user research, we discovered that many e-bike users felt overwhelmed by the technology and controls on their bikes. To address this, we created a simple and intuitive interface that allows riders to easily adjust their level of assist and monitor their battery life. We also incorporated GPS navigation, allowing riders to plan their route and track their progress.
+        </h4>
+      </div>
+      <div className='body-oslo-1'>
+        <img className='body-oslo-img-1' src='/Assets/oslo_phone_1.avif' alt='oslo-phone-1' />
+      </div>
+      {/* <div className='body-2 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
+        <img src='/Assets/img-1.png' alt='img-1' className='body-2-img' />
+      </div>
+
 
       <div className='body-4 scrolleffect' style={{ backgroundColor: theme==='light'?"#f2f2f2":""}}>
         <img src='/Assets/img-2.png' alt='img-2' className='body-4-img' />
@@ -82,7 +97,7 @@ const Body = () => {
         <h4 className='body-6-desc'>
           The end result is a user-friendly electric bicycle that makes it easy for riders to enjoy the benefits of e-bikes without feeling overwhelmed by technology. With VoltBike, riding smarter has never been easier!
         </h4>
-      </div>
+      </div> */}
     </div>
   );
 };
