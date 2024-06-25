@@ -159,10 +159,10 @@ const Work = () => {
                     </div>
                 </div>
                 <SliderAnimation />
-                <div className="work-animations">
+                {/* <div className="work-animations">
                     <AnimationOne />
                     <AnimationTwo />
-                </div>
+                </div> */}
             </div>
             <Footer />
         </div>

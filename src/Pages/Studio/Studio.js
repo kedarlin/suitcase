@@ -5,9 +5,9 @@ import Footer from '../../Components/Footer/Footer'
 
 const Studio = () => {
   return (
-    <div className='studio'>
+    <div className='syncfit'>
         <Header />
-        <img className='studio-img' src='/Assets/oslo_syncfit_img.png' alt='syncfit-img' />
+        <img className='syncfit-img' src='/Assets/oslo_syncfit_img.png' alt='syncfit-img' />
         <Footer />
     </div>
   )
