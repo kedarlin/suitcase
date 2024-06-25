@@ -22,8 +22,8 @@
 
 .work-boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
   padding: 40px 20px;
   overflow: hidden;
 }
@@ -47,9 +47,17 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.work-box-project:nth-child(3),
-.work-box-project:nth-child(6),
-.work-box-project:nth-child(9) {
+.work-box-project:nth-child(1){
+  grid-column: span 1;
+}
+.work-box-project:nth-child(2){
+  grid-column: span 2;
+}
+.work-box-project:nth-child(3){
+  grid-column: span 1;
+}
+.work-box-project:nth-child(4),
+.work-box-project:nth-child(5) {
   grid-column: span 2;
 }
 
